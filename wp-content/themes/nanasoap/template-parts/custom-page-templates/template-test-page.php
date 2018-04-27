@@ -15,11 +15,13 @@ get_header();
         public $email = "Е-мейл";
         public $city = "Город";
     }
-    function __construct($name, $name2, $password) {
+    function __construct($name, $password, $email) {
         $this->name = $name;
-        $this->name2 = $name2;
         $this->password = $password;
+        $this->email = $email;
+        echo 'Это конструктор класса User' . $name . $password . $email;
     }
+    $new_user = new User();
 ?>
 
 <?php get_footer(); ?>

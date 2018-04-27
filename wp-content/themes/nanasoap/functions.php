@@ -159,3 +159,62 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+// Регистрация пользовательского типа записи Продукция
+if (!function_exists('my_custom_post_types')):
+    function my_custom_post_types() {
+        register_post_type('Products', array (
+            'label' => 'Products',
+            'public'=> true,
+            'publicly_queryable' => true,
+            'menu_position' => null,
+            'show ui' => true,
+            'menu_icon'           => 'dashicons-wordpress-alt',
+            'capability_type' => 'post',
+            'hierarchical' => false,
+            'rewrite' => true,
+            'query_var' => true,
+            'supports' => array (
+                'title',
+                'editor',
+                'excerpt',
+                'trackbacks',
+                'custom-fields',
+                'comments',
+                'revisions',
+                'thumbnail',
+                'author',
+                'page-attributes',)
+        ));
+    }
+    add_action('init', 'my_custom_post_types');
+endif;
+
+if (!function_exists('my_custom_post_types')):
+    function my_custom_post_types() {
+        register_post_type('Products', array (
+            'label' => 'Products',
+            'public'=> true,
+            'publicly_queryable' => true,
+            'menu_position' => null,
+            'show ui' => true,
+            'menu_icon'           => 'dashicons-wordpress-alt',
+            'capability_type' => 'post',
+            'hierarchical' => false,
+            'rewrite' => true,
+            'query_var' => true,
+            'supports' => array (
+                'title',
+                'editor',
+                'excerpt',
+                'trackbacks',
+                'custom-fields',
+                'comments',
+                'revisions',
+                'thumbnail',
+                'author',
+                'page-attributes',)
+        ));
+    }
+    add_action('init', 'my_custom_post_types');
+endif;

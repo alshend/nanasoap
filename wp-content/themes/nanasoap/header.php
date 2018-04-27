@@ -21,6 +21,11 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php
+    $x = 'abc';
+    $x = apply_filters( 'misha_filter', $x );
+    echo '$x = ' . $x
+?>
 <div id="main-container">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'nanasoap' ); ?></a>
 
