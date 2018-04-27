@@ -25,6 +25,12 @@
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
+            $args = array(
+                'theme_location'    => 'main-menu',
+                'container_class'   => 'main-menu-container',
+            );
+			wp_nav_menu($args);
+
 			$nanasoap_description = get_bloginfo( 'description', 'display' );
 			if ( $nanasoap_description || is_customize_preview() ) :
 				?>

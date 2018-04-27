@@ -19,7 +19,7 @@ if ( ! function_exists( 'nanasoap_setup' ) ) :
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'nanasoap' ),
+			'main-menu' => esc_html__( 'Главное меню', 'nanasoap' ),
 		) );
 		add_theme_support( 'html5', array(
 			'search-form',
@@ -62,34 +62,6 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-if (!function_exists('my_custom_post_types')):
-    function my_custom_post_types() {
-        register_post_type('Products', array (
-            'label' => 'Products',
-            'public'=> true,
-            'publicly_queryable' => true,
-            'menu_position' => null,
-            'show ui' => true,
-            'menu_icon'           => 'dashicons-wordpress-alt',
-            'capability_type' => 'post',
-            'hierarchical' => false,
-            'rewrite' => true,
-            'query_var' => true,
-            'supports' => array (
-                'title',
-                'editor',
-                'excerpt',
-                'trackbacks',
-                'custom-fields',
-                'comments',
-                'revisions',
-                'thumbnail',
-                'author',
-                'page-attributes',)
-        ));
-    }
-    add_action('init', 'my_custom_post_types');
-endif;
 /* Custom post type */
 if (!function_exists('my_custom_post_types')):
     function my_custom_post_types() {
